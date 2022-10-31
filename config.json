@@ -1,0 +1,8 @@
+{
+  "url-backend": "127.0.0.1",
+  "port": 9999,
+
+  "data-db-connection": "mongodb+srv://scrum5:12345@cluster0.tpahidj.mongodb.net/?retryWrites=true&w=majority",
+  "name-db": "bd-resultados"
+}
+
