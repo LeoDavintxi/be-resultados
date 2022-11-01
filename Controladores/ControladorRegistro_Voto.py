@@ -31,7 +31,7 @@ class ControladorRegistro_Voto():
         laRegistro_Voto=Registro_Voto(self.repositorioRegistro_Voto.findById(id))
         laRegistro_Voto.cant_votos=infoRegistro_Voto["cant_votos"]
         laMesa= Mesa(self.repositorioMesas.findById(id_mesa))
-        elCandidato = Candidato(self.repositorioMaterias.findById(id_candidato))
+        elCandidato = Candidato(self.repositorioCandidatos.findById(id_candidato))
         laRegistro_Voto.mesa = laMesa
         laRegistro_Voto.candidato = elCandidato
         return self.repositorioRegistro_Voto.save(laRegistro_Voto)
