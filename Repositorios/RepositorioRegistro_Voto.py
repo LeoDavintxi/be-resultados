@@ -12,7 +12,7 @@ class RepositorioRegistro_Voto(InterfaceRepositorio[Registro_Voto]):
                 "$group": {
                     "_id": "$candidato",
                     "max": {
-                        "$max": "$nota_final"
+                        "$max": "$cant_votos"
                     },
                     "doc": {
                         "$first": "$$ROOT"
@@ -29,7 +29,7 @@ class RepositorioRegistro_Voto(InterfaceRepositorio[Registro_Voto]):
           "$group": {
             "_id": "$candidato",
             "promedio": {
-              "$avg": "$nota_final"
+              "$avg": "$cant_votos"
             }
           }
         }
