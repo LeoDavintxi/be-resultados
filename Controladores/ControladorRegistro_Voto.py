@@ -8,19 +8,19 @@ class ControladorRegistro_Voto():
     def __init__(self):
         self.repositorioRegistro_Voto = RepositorioRegistro_Voto()
         self.repositorioMesas = RepositorioMesa()
-        self.repositorioMaterias = RepositorioCandidato()
+        self.repositorioCandidatos = RepositorioCandidato()
     def index(self):
         return self.repositorioRegistro_Voto.findAll()
     """
     Asignacion mesa y candidato a registro de votos
     """
     def create(self,infoRegistro_Voto,id_mesa,id_candidato):
-        nuevaRegistro_Voto=Registro_Voto(infoRegistro_Voto)
+        nuevoRegistro_Voto=Registro_Voto(infoRegistro_Voto)
         laMesa=Mesa(self.repositorioMesas.findById(id_mesa))
-        elCandidato=Candidato(self.repositorioMaterias.findById(id_candidato))
-        Registro_Voto.mesa=laMesa
-        Registro_Voto.candidato=elCandidato
-        return self.repositorioRegistro_Voto.save(nuevaRegistro_Voto)
+        elCandidato=Candidato(self.repositorioCandidatos.findById(id_candidato))
+        nuevoRegistro_Voto.mesa=laMesa
+        nuevoRegistro_Voto.candidato=elCandidato
+        return self.repositorioRegistro_Voto.save(nuevoRegistro_Voto)
     def show(self,id):
         elRegistro_Voto=Registro_Voto(self.repositorioRegistro_Voto.findById(id))
         return elRegistro_Voto.__dict__
