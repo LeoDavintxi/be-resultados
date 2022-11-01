@@ -49,7 +49,7 @@ class ControladorRegistro_Voto():
 
     "Obtener promedio de votos en candidato"
     def promedioVotosEnCandidato(self,id_candidato):
-        return self.repositorioRegistro_Voto.promedioNotasEnMateria(id_candidato)
+        return self.repositorioRegistro_Voto.promedioVotosEnCandidato(id_candidato)
 
 
 
