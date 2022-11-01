@@ -29,7 +29,7 @@ class ControladorRegistro_Voto():
     """
     def update(self,id,infoRegistro_Voto,id_mesa,id_candidato):
         laRegistro_Voto=Registro_Voto(self.repositorioRegistro_Voto.findById(id))
-        laRegistro_Voto.año=infoRegistro_Voto["cant_votos"]
+        laRegistro_Voto.cant_votos=infoRegistro_Voto["cant_votos"]
         laMesa= Mesa(self.repositorioMesas.findById(id_mesa))
         elCandidato = Candidato(self.repositorioMaterias.findById(id_candidato))
         laRegistro_Voto.mesa = laMesa
